@@ -46,6 +46,7 @@ class DonutsController < ApplicationController
     if @donut.update(params.except(:_method))
       redirect "/donuts/#{@donut.id}" #redirect to SHOW page
     else
+      # donut flavor is empty string - how can we fix this?
       @error_messages = @donut.errors.full_messages
       erb :'donuts/edit'
     end
