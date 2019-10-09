@@ -41,7 +41,6 @@ class DonutsController < ApplicationController
   #Update
   patch '/donuts/:id' do 
     @donut = Donut.find(params[:id])
-    binding.pry
 
     if @donut.update(params.except(:_method))
       redirect "/donuts/#{@donut.id}" #redirect to SHOW page
