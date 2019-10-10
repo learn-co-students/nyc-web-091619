@@ -3,7 +3,7 @@
 <ul>
   <% @donuts.each do |donut| %>
     <li>
-      Flavor: <%= donut.flavor %>, Price: $<%= donut.price %>
+      Flavor: <a href="/donuts/<%= donut.id %>"><%= donut.flavor %></a> , Price: $<%= donut.price %>
     </li>
   <% end%>
 </ul>

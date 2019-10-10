@@ -8,6 +8,8 @@ class DonutsController < ApplicationController
 
   #New
   get'/donuts/new' do
+    @designers = Designer.all
+    
     erb :"donuts/new"
   end
 
@@ -27,6 +29,7 @@ class DonutsController < ApplicationController
   #Show
   get '/donuts/:id' do 
     @donut = Donut.find(params[:id])
+    @designer = @donut.designer 
     
     erb :"donuts/show"
   end
@@ -47,7 +50,7 @@ class DonutsController < ApplicationController
     else
       # donut flavor is empty string - how can we fix this?
       @error_messages = @donut.errors.full_messages
-      erb :'donuts/edit'
+      erb :'donuts/edit' # we should probably redirect here to be restful
     end
     
   

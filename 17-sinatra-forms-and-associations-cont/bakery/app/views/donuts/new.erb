@@ -9,5 +9,16 @@
 <form action="/donuts" method="post">
   <label>Flavor: </label><input type="text" name="flavor">
   <label>Price: </label><input type="number" name="price" step="0.01" min="0">
+
+  <label>Designer: </label>
+  <select name="designer_id">
+    <option value="" disabled selected>Select your option</option>
+  <% @designers.each do |designer| %>
+    <option value="<%= designer.id %>">
+      <%= designer.name %>
+    </option>
+  <% end %>
+  </select>
+
   <input type="submit">
 </form>

@@ -16,8 +16,8 @@
 
 
 > * [ ] As a site visitor, I should be able to see a list of donut designers.  
-> * [ ] As a site visitor, I should be able to see a list of donuts. I should be able to click on each donut flavor to see more information about that donut.  
-> * [ ] As a site visitor, I should be able to see a form where I create a donut. When I create a donut I can associate it with an existing designer.
+> * [x] As a site visitor, I should be able to see a list of donuts. I should be able to click on each donut flavor to see more information about that donut.  
+> * [x] As a site visitor, I should be able to see a form where I create a donut. When I create a donut I can associate it with an existing designer.
 
 ### Discussion Questions
 
