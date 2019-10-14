@@ -28,4 +28,4 @@ class MonstersController < ApplicationController
   def monster_params
     params.require(:monster).permit(:name, :scariness)
   end
-end
+end 
