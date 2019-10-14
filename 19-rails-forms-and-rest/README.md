@@ -2,8 +2,6 @@
 
 ### Learning Goals
 
-### Learning Goals
-
 * [ ] Discuss and Review Forms
 * [ ] form\_with, link\_to, button\_tag, submit\_tag
 * [ ] Strong params
