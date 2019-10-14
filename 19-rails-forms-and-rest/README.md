@@ -5,7 +5,7 @@
 ### Learning Goals
 
 * [ ] Discuss and Review Forms
-* [ ] form_with, link_to, button_tag, submit_tag
+* [ ] form\_with, link\_to, button\_tag, submit\_tag
 * [ ] Strong params
 
 ### Helpful Links
