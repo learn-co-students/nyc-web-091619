@@ -1,0 +1,18 @@
+<h1>✈️ Go ahead. Make ya jets!! ✈️</h1>
+
+
+<%= form_with model: @thing do |f| %>
+  <%= f.label :model %>
+  <%= f.text_field :model %>
+  <br>
+  <%= f.label :range %>
+  <%= f.number_field :range %> 
+  <br>
+  <%= f.label :seats %>
+  <%= f.number_field :seats %>
+  <br>
+  
+  <%= f.collection_select :jet_company_id, @jet_companies, :id, :fancy_name, prompt: true  %>
+
+  <%= f.submit %>
+<% end %>
