@@ -1,17 +1,17 @@
 class JetsController < ApplicationController
 
   def new
-    @thing = Jet.new
+    @jet = Jet.new
     @jet_companies = JetCompany.all
   end
 
   def create
     @jet = Jet.create(jet_params)
+    @jet_companies = JetCompany.all
 
     if @jet.save
       redirect_to jet_path(@jet)
     else
-      byebug
       render :new
     end
   end
