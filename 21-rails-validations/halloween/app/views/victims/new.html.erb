@@ -19,7 +19,7 @@
   <%= f.label :speed %>
   <%= f.number_field :speed %>
   <br>
-  <%= f.collection_select :monster_id, Monster.all, :id, :name, prompt: true %>
+  <%= f.collection_select :monster_id, @monsters, :id, :name, prompt: true %>
   <br>
   <%= f.submit %>
 <% end %>

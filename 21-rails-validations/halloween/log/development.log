@@ -834,3 +834,121 @@ FOREIGN KEY ("monster_id")
   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mMonster Create (0.2ms)[0m  [1m[32mINSERT INTO "monsters" ("name", "scariness", "speed", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Chucky"], ["scariness", 9], ["speed", 3.0], ["created_at", "2019-10-16 16:13:54.649168"], ["updated_at", "2019-10-16 16:13:54.649168"]]
   [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/victims/new" for ::1 at 2019-10-16 12:15:42 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by VictimsController#new as HTML
+  Rendering victims/new.html.erb within layouts/application
+  [1m[36mMonster Load (0.2ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters"[0m
+  ↳ app/views/victims/new.html.erb:22
+  Rendered victims/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 5495)
+Completed 200 OK in 22ms (Views: 15.2ms | ActiveRecord: 0.2ms | Allocations: 18096)
+
+
+Started POST "/victims" for ::1 at 2019-10-16 12:15:45 -0400
+Processing by VictimsController#create as HTML
+  Parameters: {"authenticity_token"=>"0b/EOzR/p+fL1lbUBRVl+vcu2OSh1nWACHPuwjjyssesZj1Jh9/jd4Np9wUHbyFzdjEjgvB0Kg+i7cD/jUztUA==", "victim"=>{"name"=>"", "living"=>"0", "speed"=>"3", "monster_id"=>""}, "commit"=>"Create Victim"}
+Redirected to http://localhost:3000/victims/new
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms | Allocations: 2552)
+
+
+Started GET "/victims/new" for ::1 at 2019-10-16 12:15:45 -0400
+Processing by VictimsController#new as HTML
+  Rendering victims/new.html.erb within layouts/application
+  [1m[36mMonster Load (0.1ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters"[0m
+  ↳ app/views/victims/new.html.erb:22
+  Rendered victims/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1774)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.1ms | Allocations: 7985)
+
+
+Started POST "/victims" for ::1 at 2019-10-16 12:16:06 -0400
+Processing by VictimsController#create as HTML
+  Parameters: {"authenticity_token"=>"USKFl1JiOtE2UaNwCmKrsEdqctgkdtu6Z9GGNdsU2Nws+3zl4cJ+QX7uAqEIGO85xnWJvnXUhDXNT6gIbqqHSw==", "victim"=>{"name"=>"thing", "living"=>"1", "speed"=>"-7", "monster_id"=>"3"}, "commit"=>"Create Victim"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/victims_controller.rb:15:in `create'
+  [1m[36mMonster Load (0.3ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters" WHERE "monsters"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/victims_controller.rb:15:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/victims_controller.rb:15:in `create'
+Redirected to http://localhost:3000/victims/new
+Completed 302 Found in 9ms (ActiveRecord: 0.5ms | Allocations: 3778)
+
+
+Started GET "/victims/new" for ::1 at 2019-10-16 12:16:06 -0400
+Processing by VictimsController#new as HTML
+  Rendering victims/new.html.erb within layouts/application
+  [1m[36mMonster Load (0.2ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters"[0m
+  ↳ app/views/victims/new.html.erb:22
+  Rendered victims/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1768)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.2ms | Allocations: 7969)
+
+
+Started POST "/victims" for ::1 at 2019-10-16 12:16:34 -0400
+Processing by VictimsController#create as HTML
+  Parameters: {"authenticity_token"=>"VIJv35AqHzCpdDSUjFSte2vkqNFeGAMVTd+KfKmzcDkpW5atI4pboOHLlUWOLuny6vtTtw+6XJrnQaRBHA0vrg==", "victim"=>{"name"=>"Danny", "living"=>"0", "speed"=>"5", "monster_id"=>"2"}, "commit"=>"Create Victim"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/victims_controller.rb:15:in `create'
+  [1m[36mMonster Load (0.1ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters" WHERE "monsters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/victims_controller.rb:15:in `create'
+  [1m[36mVictim Create (0.4ms)[0m  [1m[32mINSERT INTO "victims" ("name", "speed", "living", "monster_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Danny"], ["speed", 5.0], ["living", 0], ["monster_id", 2], ["created_at", "2019-10-16 16:16:34.264322"], ["updated_at", "2019-10-16 16:16:34.264322"]]
+  ↳ app/controllers/victims_controller.rb:15:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/victims_controller.rb:15:in `create'
+Redirected to http://localhost:3000/victims/1
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms | Allocations: 3901)
+
+
+Started GET "/victims/1" for ::1 at 2019-10-16 12:16:34 -0400
+Processing by VictimsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering victims/show.html.erb within layouts/application
+  Rendered victims/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 182)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 6501)
+
+
+Started GET "/victims/1" for ::1 at 2019-10-16 12:16:39 -0400
+Processing by VictimsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering victims/show.html.erb within layouts/application
+  Rendered victims/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 6180)
+
+
+Started POST "/victims" for ::1 at 2019-10-16 12:17:05 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by VictimsController#create as HTML
+  Parameters: {"authenticity_token"=>"VIJv35AqHzCpdDSUjFSte2vkqNFeGAMVTd+KfKmzcDkpW5atI4pboOHLlUWOLuny6vtTtw+6XJrnQaRBHA0vrg==", "victim"=>{"name"=>"", "living"=>"0", "speed"=>"5", "monster_id"=>"2"}, "commit"=>"Create Victim"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/victims_controller.rb:14:in `create'
+  [1m[36mMonster Load (0.1ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters" WHERE "monsters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/victims_controller.rb:14:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/victims_controller.rb:14:in `create'
+Redirected to http://localhost:3000/victims/new
+Completed 302 Found in 14ms (ActiveRecord: 1.2ms | Allocations: 14195)
+
+
+Started GET "/victims/new" for ::1 at 2019-10-16 12:17:05 -0400
+Processing by VictimsController#new as HTML
+  Rendering victims/new.html.erb within layouts/application
+  [1m[36mMonster Load (0.1ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters"[0m
+  ↳ app/views/victims/new.html.erb:22
+  Rendered victims/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1799)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 8152)
+
+
+Started POST "/victims" for ::1 at 2019-10-16 12:17:07 -0400
+Processing by VictimsController#create as HTML
+  Parameters: {"authenticity_token"=>"2vL5AfkCkgE3QAdqJQXDGWUQMi3TipJWIUGhnigzaqenKwBzSqLWkX//prsnf4eQ5A/JS4IozdmL34+jnY01MA==", "victim"=>{"name"=>"", "living"=>"0", "speed"=>"", "monster_id"=>""}, "commit"=>"Create Victim"}
+Redirected to http://localhost:3000/victims/new
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms | Allocations: 2039)
+
+
+Started GET "/victims/new" for ::1 at 2019-10-16 12:17:07 -0400
+Processing by VictimsController#new as HTML
+  Rendering victims/new.html.erb within layouts/application
+  [1m[36mMonster Load (0.1ms)[0m  [1m[34mSELECT "monsters".* FROM "monsters"[0m
+  ↳ app/views/victims/new.html.erb:22
+  Rendered victims/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1768)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.1ms | Allocations: 7965)
+
+
