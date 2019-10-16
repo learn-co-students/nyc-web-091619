@@ -12,16 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_10_16_154118) do
 
-  create_table "humans", force: :cascade do |t|
-    t.string "name"
-    t.boolean "living"
-    t.decimal "speed"
-    t.integer "monster_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["monster_id"], name: "index_humans_on_monster_id"
-  end
-
   create_table "monsters", force: :cascade do |t|
     t.string "name"
     t.integer "scariness"
@@ -40,6 +30,5 @@ ActiveRecord::Schema.define(version: 2019_10_16_154118) do
     t.index ["monster_id"], name: "index_victims_on_monster_id"
   end
 
-  add_foreign_key "humans", "monsters"
   add_foreign_key "victims", "monsters"
 end
