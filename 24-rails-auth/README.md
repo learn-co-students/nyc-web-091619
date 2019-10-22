@@ -12,10 +12,10 @@
 
 
  ### Authentication
-  * ensuring that a person is who they say they are
-  * creating an account
-  * logging in, providing the correct password
+* ensuring that a person is who they say they are
+* creating an account
+* logging in, providing the correct password
 
-  ### Authorization
-    * granting differential access to whatever
-    * whether or not they are logged in
+### Authorization
+* granting differential access to whatever
+* whether or not they are logged in
