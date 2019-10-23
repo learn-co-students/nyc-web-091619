@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authorized, only: [:show]
+  
   def new
     @user = User.new
   end
@@ -8,14 +10,14 @@ class UsersController < ApplicationController
     
     if @user.save
       flash[:notice] = "User successfully created!!!"
-      redirect_to user_path(@user)
+      redirect_to login_path
     else
       flash[:errors] = @user.errors.full_messages
       redirect_to signup_path
     end
   end
 
-  def show
+  def show 
     @user = User.find(params[:id])
   end
 
