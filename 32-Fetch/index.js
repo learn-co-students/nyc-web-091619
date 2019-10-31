@@ -1,11 +1,30 @@
-let api = "http://localhost:3000/halloweenJoke"
+let api = "http://localhost:3000/celebrities"
+let parentUl = document.getElementsByTagName("ul")[0]
 
-
-// Should fetch all of our celebrities and append them to the page
+// Should fetch all of our celebrities and append them to the DOM
 let fetchCall = function () {
+    fetch(api)
+        .then(function (resp) { return resp.json() })
+        .then(function (data) { data.forEach(appendCelebrity) })
 }
 
 fetchCall()
+
+function addCelebrity(obj) {
+    console.log("adding", obj)
+    //send a POST request
+    fetch(api, {
+        method: "PATCH",
+        headers: {
+            "content-type": "application/json",
+            accepts: "application/json"
+        },
+        body: JSON.stringify(obj)
+    })
+        .then(function (resp) { return resp.json() })
+        .then(function (resp) { appendCelebrity(resp) })
+}
+
 
 function clickHandler(e) {
     let parent = e.target.parentNode.querySelector("h4 span")
@@ -14,9 +33,8 @@ function clickHandler(e) {
     parent.innerText = num
 }
 
-let parentUl = document.getElementsByTagName("ul")[0]
 
-function addCelebrity(element) {
+function appendCelebrity(element) {
     let li = document.createElement("li")
     let h3 = document.createElement("h3")
     let h4 = document.createElement("h4")
@@ -63,6 +81,10 @@ celebrityContainer.addEventListener("click", function (e) {
 
 let addButton = document.getElementsByTagName("BUTTON")[0]
 
+
+
+
+
 addButton.addEventListener("click", function (e) {
     e.stopPropagation()
     let oldChild = e.target
@@ -84,6 +106,7 @@ addButton.addEventListener("click", function (e) {
             image: image
         }
         addCelebrity(obj)
+        // appendCelebrity(obj)
         form.reset()
 
     })
