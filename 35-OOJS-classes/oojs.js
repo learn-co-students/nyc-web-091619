@@ -73,7 +73,7 @@ class Celebrity {
         this.id = Celebrity.id
         Celebrity.id++
         Celebrity.all.push(this)
-        // this.beKanye = this.beKanye.bind(this)
+        this.beKanye = this.beKanye.bind(this)
     }
 
     static classMethod() { console.log("this is a class method") }
@@ -94,7 +94,6 @@ Celebrity.id = 1
 
 
 let felix = new Celebrity("Felix", "Martinez")
-// Celebrity.all.push(felix)
 
 
 let someFunc = felix.beKanye
