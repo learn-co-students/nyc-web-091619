@@ -6,7 +6,9 @@ import NewListingForm from './NewListingForm'
 class MainBody extends React.Component {
 
   state = {
-    listings: []
+    listings: [],
+    loading: true,
+    someObject: null
   }
 
   addListing = (listingFromDB) => {
@@ -15,12 +17,18 @@ class MainBody extends React.Component {
     })
   }
 
-  clickHandler = () => {    
+  componentDidMount(){
+    this.fetchListings()
+  }
+
+  fetchListings = () => {    
     fetch("http://localhost:3001/api/v1/listings")
     .then(res => res.json())
     .then(data => {
       this.setState({
-        listings: data
+        listings: data,
+        loading: false,
+        someObject: {id: 1, beef: "steak"}
       })
 
     })
@@ -29,9 +37,9 @@ class MainBody extends React.Component {
   renderMainBody = () => {
     switch(this.props.page){
       case "index":
+        
         return <ListingIndex 
                   listings={this.state.listings}
-                  clickHandler={this.clickHandler}
                 />  
       case "waiver":
         return <Waiver signWaiver={this.props.signWaiver} />
@@ -41,11 +49,18 @@ class MainBody extends React.Component {
   }
 
   render(){
+
+    if (this.state.loading){
+      return <h1>Loading...</h1>
+    }
+
+        
     return (
       <div>
         {
           this.renderMainBody()
         }
+        {this.state.someObject.beef}
       </div>
     )
   }

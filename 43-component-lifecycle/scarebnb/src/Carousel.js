@@ -15,7 +15,6 @@ class Carousel extends React.Component {
   render(){
     return (
       <div className="carousel">
-        <button onClick={this.props.clickHandler}>Fetch Listings</button>
         {this.renderListings()}
       </div>
     )
