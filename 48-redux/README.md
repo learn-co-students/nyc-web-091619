@@ -4,11 +4,11 @@ Intro to Redux
 ## SWBATs
 
 ### Redux
-- [ ] Install the redux library so it can be used in a project.
-- [ ] Create a `store` in redux with some default `state`.
-- [ ] Create a `reducer` to change `state` based on an `action.type`.
-- [ ] Use `dispatch` to send an `action` to the `store` to make changes to `state`.
-- [ ] Read `state` in the `store`.
+- [x] Install the redux library so it can be used in a project.
+- [x] Create a `store` in redux with some default `state`.
+- [x] Create a `reducer` to change `state` based on an `action.type`.
+- [x] Use `dispatch` to send an `action` to the `store` to make changes to `state`.
+- [x] Read `state` in the `store`.
 
 ### React Redux
 - [ ] Install the `react-redux` library so it can be used in a project.
